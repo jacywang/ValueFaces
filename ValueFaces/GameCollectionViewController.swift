@@ -42,7 +42,7 @@ class GameCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = spacing
         flowLayout.minimumLineSpacing = spacing
         let cellWidth = (screenwidth! - 2 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
-        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth)
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth / 2.0)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
