@@ -3,11 +3,16 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +20,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bw-S3-2pq">
+                                <rect key="frame" x="217" y="100" width="165.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vc8-ez-wW2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to get a better result, make sure you have sufficient time in a quiet environment." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK3-Gs-1aH">
+                                <rect key="frame" x="150" y="220" width="300" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="DGW-gR-2VF"/>
+                                    <constraint firstAttribute="height" constant="85" id="vJY-BM-Fht"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-hY-z75">
+                                <rect key="frame" x="270" y="335" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1ps-VS-zNI"/>
+                                    <constraint firstAttribute="width" constant="60" id="lFs-3a-3Ab"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.38823529411764707" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Asn-hY-z75" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5oe-OC-hE3"/>
+                            <constraint firstItem="9bw-S3-2pq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gkk-hN-ljg"/>
+                            <constraint firstItem="IK3-Gs-1aH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Si2-JL-ZmO"/>
+                            <constraint firstItem="9bw-S3-2pq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="buh-jE-ME1"/>
+                            <constraint firstItem="Asn-hY-z75" firstAttribute="top" secondItem="IK3-Gs-1aH" secondAttribute="bottom" constant="30" id="v9k-N3-yTC"/>
+                            <constraint firstItem="IK3-Gs-1aH" firstAttribute="top" secondItem="9bw-S3-2pq" secondAttribute="bottom" constant="20" id="xJ4-zd-XXa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="goButton" destination="Asn-hY-z75" id="JGq-bd-3nz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="309"/>
         </scene>
     </scenes>
 </document>
