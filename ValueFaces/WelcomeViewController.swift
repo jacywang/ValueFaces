@@ -18,6 +18,8 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBarHidden = true
+        
         goButton.layer.borderWidth = buttonBorderWith
         goButton.layer.borderColor = UIColor.whiteColor().CGColor
         goButton.layer.cornerRadius = goButton.frame.size.height / cornerRadiusDivider
