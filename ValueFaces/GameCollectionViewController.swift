@@ -10,15 +10,18 @@ import UIKit
 
 private let reuseIdentifier = "ValueCell"
 
-class GameCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate {
+class GameCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let spacing: CGFloat = 10.0
-    let screenWidthDivider:CGFloat = 2.0
+    var screenWidthDivider:CGFloat = 4.0
     var values = [Value]()
     var selectedValues = [Value]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         values = setValueCards()
         selectedValues = values
         setFlowlayout()
@@ -30,15 +33,9 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
         
         presentGuide()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showThirdLevel" {
             
@@ -102,13 +99,13 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
     
     func setFlowlayout() {
         let screenwidth = collectionView?.frame.width
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = spacing
+        let flowLayout = CustomFlowLayout()
+        flowLayout.minimumInteritemSpacing = spacing / 3.0
         flowLayout.minimumLineSpacing = spacing
-        flowLayout.scrollDirection = .Horizontal
-        let cellWidth = (screenwidth! - 3 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
+        flowLayout.scrollDirection = .Vertical
+        let cellWidth = (screenwidth! - (screenWidthDivider + 2) * flowLayout.minimumInteritemSpacing) / screenWidthDivider
         flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 2)
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        flowLayout.sectionInset = UIEdgeInsetsMake(20, 5, 10, 5)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
         collectionView?.backgroundColor = UIColor.manicCravingColor()
@@ -145,17 +142,19 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
         
         if selectedValues.count > 12 {
             alertTitle = "First Level"
-            alertMessage = "There are twenty value cards and you can scroll horizontally to see the full list. In the first round, you will get rid of eight value cards that are less important to you. Double tap to remove a card!"
+            alertMessage = "There are twenty value cards. In the first round, you will get rid of eight value cards that are less important to you. Double tap to remove a card!"
         }
         
         if selectedValues.count == 12 {
             alertTitle = "Second Level"
-            alertMessage = "Good job! Now get rid of another seven value cards"
+            alertMessage = "Good job! Now get rid of another six value cards"
+            screenWidthDivider = 3
+            setFlowlayout()
         }
         
-        if selectedValues.count == 5 {
+        if selectedValues.count == 6 {
             alertTitle = "Congratulations!"
-            alertMessage = "You have chosen your top five values. Now move on to the next level to find your top three!"
+            alertMessage = "You have chosen your top six values. Now move on to the next level to find your top three!"
         }
         
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
@@ -193,7 +192,7 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
                 }, completion: nil)
         }
         
-        if selectedValues.count == 12 || selectedValues.count == 5 {
+        if selectedValues.count == 12 || selectedValues.count == 6 {
             presentGuide()
         }
     }
