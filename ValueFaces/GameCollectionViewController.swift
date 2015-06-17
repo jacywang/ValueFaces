@@ -16,7 +16,6 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
     let screenWidthDivider:CGFloat = 2.0
     var values = [Value]()
     var selectedValues = [Value]()
-//    var doubleTapGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +36,14 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
         // Dispose of any resources that can be recreated.
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showThirdLevel" {
+            
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -108,9 +106,9 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
         flowLayout.minimumInteritemSpacing = spacing
         flowLayout.minimumLineSpacing = spacing
         flowLayout.scrollDirection = .Horizontal
-        let cellWidth = (screenwidth! - 2 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
-        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 3)
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
+        let cellWidth = (screenwidth! - 3 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 2)
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
         collectionView?.backgroundColor = UIColor.manicCravingColor()
@@ -137,15 +135,40 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
             Value(imageName: "time", aText: "Time"),
             Value(imageName: "wealth", aText: "Wealth"),
             Value(imageName: "wisdom", aText: "Wisdom"),
-            
         ];
     }
     
     func presentGuide() {
-        let alertController = UIAlertController(title: "First Round Guide", message: "There are twenty value cards and you can scroll horizontally to see the full list. In the first round, you need to get rid of eight value cards that are less important to you. Double tap to remove a card!", preferredStyle: .Alert)
-        let alertAction = UIAlertAction(title: "Start", style: UIAlertActionStyle.Default, handler: { action -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
+        var alertTitle = ""
+        var alertMessage = ""
+        var alertAction = UIAlertAction()
+        
+        if selectedValues.count > 12 {
+            alertTitle = "First Level"
+            alertMessage = "There are twenty value cards and you can scroll horizontally to see the full list. In the first round, you will get rid of eight value cards that are less important to you. Double tap to remove a card!"
+        }
+        
+        if selectedValues.count == 12 {
+            alertTitle = "Second Level"
+            alertMessage = "Good job! Now get rid of another seven value cards"
+        }
+        
+        if selectedValues.count == 5 {
+            alertTitle = "Congratulations!"
+            alertMessage = "You have chosen your top five values. Now move on to the next level to find your top three!"
+        }
+        
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+        
+        if selectedValues.count == 6 {
+            alertAction = UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: { action -> Void in
+                self.performSegueWithIdentifier("showThirdLevel", sender: self)
+            })
+        } else {
+            alertAction = UIAlertAction(title: "Start", style: UIAlertActionStyle.Default, handler: { action -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
         
         alertController.addAction(alertAction)
         
@@ -161,12 +184,17 @@ class GameCollectionViewController: UICollectionViewController, UIGestureRecogni
     func doubleTap(sender:UITapGestureRecognizer) {
         let touchLocation = sender.locationInView(collectionView)
         let cellIndexPath = collectionView?.indexPathForItemAtPoint(touchLocation)
-        selectedValues.removeAtIndex((cellIndexPath?.row)!)
-        collectionView?.reloadData()
-//        if cellIndexPath != nil {
-//            collectionView?.performBatchUpdates({ () -> Void in
-//                self.collectionView?.deleteItemsAtIndexPaths([cellIndexPath])
-//                }, completion: nil)
-//        }
+
+        if cellIndexPath != nil {
+            selectedValues.removeAtIndex((cellIndexPath?.row)!)
+            collectionView?.performBatchUpdates({ () -> Void in
+                self.collectionView?.deleteItemsAtIndexPaths([cellIndexPath!])
+                return
+                }, completion: nil)
+        }
+        
+        if selectedValues.count == 12 || selectedValues.count == 5 {
+            presentGuide()
+        }
     }
 }
