@@ -38,7 +38,8 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showThirdLevel" {
-            
+            let gameFinalRoundViewController = segue.destinationViewController as! GameFinalRoundViewController
+            gameFinalRoundViewController.topSixValues = selectedValues
         }
     }
 
