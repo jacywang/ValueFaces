@@ -10,25 +10,26 @@ import UIKit
 
 private let reuseIdentifier = "ValueCell"
 
-class GameCollectionViewController: UICollectionViewController {
+class GameCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     
     let spacing: CGFloat = 10.0
     let screenWidthDivider:CGFloat = 2.0
     var values = [Value]()
     var selectedValues = [Value]()
+//    var doubleTapGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         values = setValueCards()
         selectedValues = values
         setFlowlayout()
+        setDoubleTapGesture()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         presentGuide()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -150,5 +151,22 @@ class GameCollectionViewController: UICollectionViewController {
         
         presentViewController(alertController, animated: true, completion: nil)
     }
-
+    
+    func setDoubleTapGesture() {
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: "doubleTap:")
+        doubleTapGesture.numberOfTapsRequired = 2
+        collectionView?.addGestureRecognizer(doubleTapGesture)
+    }
+    
+    func doubleTap(sender:UITapGestureRecognizer) {
+        let touchLocation = sender.locationInView(collectionView)
+        let cellIndexPath = collectionView?.indexPathForItemAtPoint(touchLocation)
+        selectedValues.removeAtIndex((cellIndexPath?.row)!)
+        collectionView?.reloadData()
+//        if cellIndexPath != nil {
+//            collectionView?.performBatchUpdates({ () -> Void in
+//                self.collectionView?.deleteItemsAtIndexPaths([cellIndexPath])
+//                }, completion: nil)
+//        }
+    }
 }
