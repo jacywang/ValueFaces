@@ -155,7 +155,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         
         if selectedValues.count == 6 {
             alertTitle = "Congratulations!"
-            alertMessage = "You have chosen your top six values. Now move on to the next level to find your top three!"
+            alertMessage = "You have chosen your top six values. Now move on to the next level to find your Top Three!"
         }
         
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)

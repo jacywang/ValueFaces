@@ -10,6 +10,9 @@ import UIKit
 
 class GameFinalRoundViewController: UIViewController {
     
+    @IBOutlet weak var aView: ValueCardView!
+    @IBOutlet weak var bView: ValueCardView!
+    
     var topSixValues = [Value]()
 
     override func viewDidLoad() {
@@ -19,6 +22,11 @@ class GameFinalRoundViewController: UIViewController {
         view.backgroundColor = UIColor.manicCravingColor()
         
         print(topSixValues)
+        
+        aView.imageView.image = topSixValues[0].image
+        aView.valueLabel.text = topSixValues[0].text
+        bView.imageView.image = topSixValues[1].image
+        bView.valueLabel.text = topSixValues[1].text
     }
     
     /*
