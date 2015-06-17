@@ -14,38 +14,26 @@ class GameCollectionViewController: UICollectionViewController {
     
     let spacing: CGFloat = 10.0
     let screenWidthDivider:CGFloat = 2.0
-    let values = ["Quality of Life", "Stability", "Happiness", "Health", "Achievement", "Family", "Balance", "Wisdom", "Friendship", "Respect", "Recognition", "Freedom", "Love", "Peace", "Wealth", "Time", "Beauty", "Power", "Responsibility", "Career"]
-    var selectedValues = [String]()
+    var values = [Value]()
+    var selectedValues = [Value]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        values = setValueCards()
         selectedValues = values
-        self.setFlowlayout()
+        setFlowlayout()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        presentGuide()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: Help Method
-    
-    func setFlowlayout() {
-        let screenwidth = collectionView?.frame.width
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = spacing
-        flowLayout.minimumLineSpacing = spacing
-        let cellWidth = (screenwidth! - 2 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
-        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth / 2.0)
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
-        
-        collectionView?.setCollectionViewLayout(flowLayout, animated: true)
     }
     
     /*
@@ -110,5 +98,57 @@ class GameCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    // MARK: Help Method
+    
+    func setFlowlayout() {
+        let screenwidth = collectionView?.frame.width
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = spacing
+        flowLayout.minimumLineSpacing = spacing
+        flowLayout.scrollDirection = .Horizontal
+        let cellWidth = (screenwidth! - 2 * flowLayout.minimumInteritemSpacing) / screenWidthDivider
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 3)
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
+        
+        collectionView?.setCollectionViewLayout(flowLayout, animated: true)
+        collectionView?.backgroundColor = UIColor.manicCravingColor()
+    }
+    
+    func setValueCards() -> [Value] {
+        return [Value(imageName: "achievement", aText: "Achievement"),
+            Value(imageName: "balance", aText: "Balance"),
+            Value(imageName: "beauty", aText: "Beauty"),
+            Value(imageName: "career", aText: "Career"),
+            Value(imageName: "family", aText: "Family"),
+            Value(imageName: "freedom", aText: "Freedom"),
+            Value(imageName: "friendship", aText: "Friendship"),
+            Value(imageName: "happiness", aText: "Happiness"),
+            Value(imageName: "health", aText: "Health"),
+            Value(imageName: "love", aText: "Love"),
+            Value(imageName: "peace", aText: "Peace"),
+            Value(imageName: "power", aText: "Power"),
+            Value(imageName: "qualityofLife", aText: "Quality of Life"),
+            Value(imageName: "recognition", aText: "Recognition"),
+            Value(imageName: "respect", aText: "Respect"),
+            Value(imageName: "responsibility", aText: "Responsibility"),
+            Value(imageName: "stability", aText: "Stability"),
+            Value(imageName: "time", aText: "Time"),
+            Value(imageName: "wealth", aText: "Wealth"),
+            Value(imageName: "wisdom", aText: "Wisdom"),
+            
+        ];
+    }
+    
+    func presentGuide() {
+        let alertController = UIAlertController(title: "First Round Guide", message: "There are twenty value cards and you can scroll horizontally to see the full list. In the first round, you need to get rid of eight value cards that are less important to you. Double tap to remove a card!", preferredStyle: .Alert)
+        let alertAction = UIAlertAction(title: "Start", style: UIAlertActionStyle.Default, handler: { action -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
+        alertController.addAction(alertAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
 
 }

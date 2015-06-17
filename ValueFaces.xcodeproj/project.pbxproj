@@ -17,6 +17,8 @@
 		9CA99FAE1B2FA33D000520ED /* ValueFacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FAD1B2FA33D000520ED /* ValueFacesUITests.swift */; };
 		9CA99FBC1B2FD747000520ED /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FBB1B2FD747000520ED /* GameCollectionViewController.swift */; };
 		9CA99FBE1B2FE103000520ED /* ValueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FBD1B2FE103000520ED /* ValueCollectionViewCell.swift */; };
+		9CA99FC01B30DC46000520ED /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FBF1B30DC46000520ED /* Value.swift */; };
+		9CA99FC21B30E738000520ED /* UIColor+ExtraColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FC11B30E738000520ED /* UIColor+ExtraColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		9CA99FAF1B2FA33D000520ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA99FBB1B2FD747000520ED /* GameCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
 		9CA99FBD1B2FE103000520ED /* ValueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueCollectionViewCell.swift; sourceTree = "<group>"; };
+		9CA99FBF1B30DC46000520ED /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		9CA99FC11B30E738000520ED /* UIColor+ExtraColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ExtraColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				9CA99F8C1B2FA33C000520ED /* WelcomeViewController.swift */,
 				9CA99FBB1B2FD747000520ED /* GameCollectionViewController.swift */,
 				9CA99FBD1B2FE103000520ED /* ValueCollectionViewCell.swift */,
+				9CA99FBF1B30DC46000520ED /* Value.swift */,
+				9CA99FC11B30E738000520ED /* UIColor+ExtraColor.swift */,
 				9CA99F8E1B2FA33C000520ED /* Main.storyboard */,
 				9CA99F941B2FA33C000520ED /* Assets.xcassets */,
 				9CA99F961B2FA33C000520ED /* LaunchScreen.storyboard */,
@@ -265,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA99F8D1B2FA33C000520ED /* WelcomeViewController.swift in Sources */,
+				9CA99FC01B30DC46000520ED /* Value.swift in Sources */,
 				9CA99FBE1B2FE103000520ED /* ValueCollectionViewCell.swift in Sources */,
+				9CA99FC21B30E738000520ED /* UIColor+ExtraColor.swift in Sources */,
 				9CA99F8B1B2FA33C000520ED /* AppDelegate.swift in Sources */,
 				9CA99FBC1B2FD747000520ED /* GameCollectionViewController.swift in Sources */,
 				9CA99F931B2FA33C000520ED /* ValueFaces.xcdatamodeld in Sources */,
