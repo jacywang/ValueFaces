@@ -22,6 +22,7 @@
 		9CA99FC61B31EC85000520ED /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FC51B31EC85000520ED /* CustomFlowLayout.swift */; };
 		9CA99FCA1B320D52000520ED /* ValueCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FC91B320D52000520ED /* ValueCardView.swift */; };
 		9CA99FCC1B324C03000520ED /* GameFinalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FCB1B324C03000520ED /* GameFinalTableViewController.swift */; };
+		9CA99FCE1B327330000520ED /* ValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FCD1B327330000520ED /* ValueTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9CA99FC51B31EC85000520ED /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		9CA99FC91B320D52000520ED /* ValueCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueCardView.swift; sourceTree = "<group>"; };
 		9CA99FCB1B324C03000520ED /* GameFinalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFinalTableViewController.swift; sourceTree = "<group>"; };
+		9CA99FCD1B327330000520ED /* ValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9CA99FBD1B2FE103000520ED /* ValueCollectionViewCell.swift */,
 				9CA99FC91B320D52000520ED /* ValueCardView.swift */,
 				9CA99FCB1B324C03000520ED /* GameFinalTableViewController.swift */,
+				9CA99FCD1B327330000520ED /* ValueTableViewCell.swift */,
 				9CA99FBF1B30DC46000520ED /* Value.swift */,
 				9CA99FC11B30E738000520ED /* UIColor+ExtraColor.swift */,
 				9CA99F8E1B2FA33C000520ED /* Main.storyboard */,
@@ -216,6 +219,7 @@
 				TargetAttributes = {
 					9CA99F861B2FA33C000520ED = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 3T36RCW5R7;
 					};
 					9CA99F9D1B2FA33D000520ED = {
 						CreatedOnToolsVersion = 7.0;
@@ -279,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA99FCE1B327330000520ED /* ValueTableViewCell.swift in Sources */,
 				9CA99FCC1B324C03000520ED /* GameFinalTableViewController.swift in Sources */,
 				9CA99F8D1B2FA33C000520ED /* WelcomeViewController.swift in Sources */,
 				9CA99FCA1B320D52000520ED /* ValueCardView.swift in Sources */,
@@ -430,11 +435,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ValueFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.ValueFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -442,11 +450,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ValueFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.ValueFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
