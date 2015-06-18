@@ -37,7 +37,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
             // Configure attributes ...
             let rect = attributes!.frame;
             attributes!.frame = CGRectMake(collectionView!.center.x, collectionView!.bounds.size.height, rect.width, rect.height)
-            attributes!.alpha = 0.0
+            attributes!.alpha = 0.5
         }
         
         return attributes;

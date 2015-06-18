@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 
 class GameFinalTableViewController: UITableViewController {
 
@@ -15,11 +14,10 @@ class GameFinalTableViewController: UITableViewController {
     var snapshot: UIView?
     var sourceIndexPath: NSIndexPath?
     
+    @IBOutlet weak var doneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Testing! should remove after test is completed.
 //        topSixValues = [Value(imageName: "achievement", aText: "Achievement"),
@@ -29,6 +27,10 @@ class GameFinalTableViewController: UITableViewController {
 //            Value(imageName: "family", aText: "Family"),
 //            Value(imageName: "freedom", aText: "Freedom")]
         
+        doneButton.layer.borderWidth = 1.0
+        doneButton.layer.borderColor = UIColor.whiteColor().CGColor
+        doneButton.layer.cornerRadius = doneButton.frame.size.height / 2.0
+        
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         tableView.addGestureRecognizer(longPress)
     }
@@ -36,9 +38,7 @@ class GameFinalTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBarHidden = false
-        navigationController?.hidesBarsOnSwipe = true
-        navigationItem.hidesBackButton = true
+        StatusBarManager.setStatusBarBlack(true)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -69,9 +69,9 @@ class GameFinalTableViewController: UITableViewController {
         return cell
     }
 
-//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -80,22 +80,12 @@ class GameFinalTableViewController: UITableViewController {
             topSixValues.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-//        let value = topSixValues![fromIndexPath.row]
-//        topSixValues.removeAtIndex(fromIndexPath.row)
-//        topSixValues.insert(value, atIndex: toIndexPath.row)
-        
     }
-
-    // Override to support conditional rearranging of the table view.
-//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
 
     /*
     // MARK: - Navigation
@@ -108,6 +98,10 @@ class GameFinalTableViewController: UITableViewController {
     */
     
     // MARK: Help Method
+    
+    @IBAction func doneButtonPressed(sender: UIButton) {
+        print("Done button pressed!")
+    }
     
     func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {
         let state = sender.state as UIGestureRecognizerState
@@ -180,5 +174,4 @@ class GameFinalTableViewController: UITableViewController {
         
         return snapshot
     }
-
 }
