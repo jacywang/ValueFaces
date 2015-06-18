@@ -20,12 +20,12 @@ class GameFinalTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Testing! should remove after test is completed.
-//        topSixValues = [Value(imageName: "achievement", aText: "Achievement"),
-//            Value(imageName: "balance", aText: "Balance"),
-//            Value(imageName: "beauty", aText: "Beauty"),
-//            Value(imageName: "career", aText: "Career"),
-//            Value(imageName: "family", aText: "Family"),
-//            Value(imageName: "freedom", aText: "Freedom")]
+        topSixValues = [Value(imageName: "achievement", aText: "Achievement"),
+            Value(imageName: "balance", aText: "Balance"),
+            Value(imageName: "beauty", aText: "Beauty"),
+            Value(imageName: "career", aText: "Career"),
+            Value(imageName: "family", aText: "Family"),
+            Value(imageName: "freedom", aText: "Freedom")]
         
         doneButton.layer.borderWidth = 1.0
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -87,21 +87,16 @@ class GameFinalTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showTopThree" {
+            let topThreeViewController = segue.destinationViewController as! TopThreeViewController
+            topThreeViewController.topThreeValues = [topSixValues[0], topSixValues[1], topSixValues[2]]
+        }
     }
-    */
-    
+
     // MARK: Help Method
-    
-    @IBAction func doneButtonPressed(sender: UIButton) {
-        print("Done button pressed!")
-    }
     
     func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {
         let state = sender.state as UIGestureRecognizerState
