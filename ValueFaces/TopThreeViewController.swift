@@ -19,6 +19,12 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 
     // MARK: UITableViewDataSource 
     

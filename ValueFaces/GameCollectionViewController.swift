@@ -64,6 +64,18 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         return cell
     }
     
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        var reusableView = UICollectionReusableView()
+        
+        if kind == UICollectionElementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView", forIndexPath: indexPath) as! CustomHeaderView
+            headerView.headerLabel.text = "Double tap to remove a value card that is less important to you!"
+            reusableView = headerView
+        }
+        
+        return reusableView
+    }
+    
     // MARK: Help Method
     
     func setFlowlayout() {
@@ -72,9 +84,10 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         flowLayout.minimumInteritemSpacing = spacing / 3.0
         flowLayout.minimumLineSpacing = spacing
         flowLayout.scrollDirection = .Vertical
+        flowLayout.headerReferenceSize = CGSizeMake(collectionView!.bounds.width, 30.0)
         let cellWidth = (screenwidth! - (screenWidthDivider + 2) * flowLayout.minimumInteritemSpacing) / screenWidthDivider
         flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 2)
-        flowLayout.sectionInset = UIEdgeInsetsMake(20, 5, 10, 5)
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 5, 10, 5)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
         collectionView?.backgroundColor = UIColor.manicCravingColor()

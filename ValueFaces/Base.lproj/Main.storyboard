@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7qO-0U-SRU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fl5-Sl-4Ss">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
@@ -14,6 +14,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Italic</string>
             <string>HelveticaNeue-Italic</string>
             <string>HelveticaNeue-Italic</string>
         </mutableArray>
@@ -93,13 +94,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yjT-KM-EA6">
                             <size key="itemSize" width="217" height="246"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ValueCell" id="Irv-6M-aPE" customClass="ValueCollectionViewCell" customModule="ValueFaces" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="217" height="246"/>
+                                <rect key="frame" x="0.0" y="114" width="217" height="246"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="217" height="246"/>
@@ -125,6 +126,10 @@
                                                 </mask>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKg-4A-DLv">
+                                            <rect key="frame" x="0.0" y="-49" width="600" height="48"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -143,6 +148,39 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="7ek-7b-i3u" customClass="CustomHeaderView" customModule="ValueFaces" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-sM-26s">
+                                    <rect key="frame" x="8" y="0.0" width="584" height="50"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="top" secondItem="7ek-7b-i3u" secondAttribute="topMargin" id="1nl-aB-zwt"/>
+                                <constraint firstAttribute="bottom" secondItem="dXb-sM-26s" secondAttribute="bottom" id="33R-WH-syH"/>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="trailing" secondItem="7ek-7b-i3u" secondAttribute="trailingMargin" id="8v7-MX-wRB"/>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="top" secondItem="7ek-7b-i3u" secondAttribute="top" id="AKd-AF-nHT"/>
+                                <constraint firstAttribute="trailing" secondItem="dXb-sM-26s" secondAttribute="trailing" constant="8" id="NVt-mb-1f9"/>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="leading" secondItem="7ek-7b-i3u" secondAttribute="leadingMargin" id="avL-jX-DcU"/>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="bottom" secondItem="7ek-7b-i3u" secondAttribute="bottomMargin" id="e7r-3B-azI"/>
+                                <constraint firstItem="dXb-sM-26s" firstAttribute="leading" secondItem="7ek-7b-i3u" secondAttribute="leading" constant="8" id="sZU-hc-vXL"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="1nl-aB-zwt"/>
+                                    <exclude reference="8v7-MX-wRB"/>
+                                    <exclude reference="avL-jX-DcU"/>
+                                    <exclude reference="e7r-3B-azI"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <outlet property="headerLabel" destination="dXb-sM-26s" id="AE6-p3-9Io"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="ZjJ-zr-dY0" id="zbD-Hu-1Ol"/>
                             <outlet property="delegate" destination="ZjJ-zr-dY0" id="vdj-5q-1BJ"/>
@@ -260,7 +298,7 @@
         <!--Top Three View Controller-->
         <scene sceneID="I7U-wn-Ys2">
             <objects>
-                <viewController id="dN9-EE-66z" customClass="TopThreeViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dN9-EE-66z" customClass="TopThreeViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="39Q-qn-mdF"/>
                         <viewControllerLayoutGuide type="bottom" id="WN8-Dm-HlO"/>
@@ -269,18 +307,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-dN-39y">
-                                <rect key="frame" x="0.0" y="133" width="600" height="300"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-dN-39y">
+                                <rect key="frame" x="0.0" y="141" width="600" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="2Ct-3d-7Xn"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Mbc-IV-Xg7" customClass="TopThreeTableViewCell" customModule="ValueFaces" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="22" width="600" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mbc-IV-Xg7" id="3zU-sp-f7F">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lC-ed-ftW">
@@ -289,7 +327,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vK-qG-PEd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vK-qG-PEd">
                                                     <rect key="frame" x="8" y="8" width="50" height="83.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="rjI-P2-fMi"/>
@@ -301,6 +339,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="achievement" translatesAutoresizingMaskIntoConstraints="NO" id="B0n-i1-0VP">
                                                     <rect key="frame" x="66" y="8" width="83.5" height="83.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="83.5" id="Fwy-wx-fhd"/>
+                                                        <constraint firstAttribute="height" constant="83.5" id="ayB-o6-b5G"/>
                                                         <constraint firstAttribute="width" secondItem="B0n-i1-0VP" secondAttribute="height" id="res-uX-NUL"/>
                                                     </constraints>
                                                 </imageView>
@@ -310,6 +350,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="3vK-qG-PEd" secondAttribute="bottom" id="2P9-vb-58L"/>
                                                 <constraint firstItem="0lC-ed-ftW" firstAttribute="leading" secondItem="B0n-i1-0VP" secondAttribute="trailing" constant="8" id="3qG-QV-hzP"/>
                                                 <constraint firstAttribute="topMargin" secondItem="0lC-ed-ftW" secondAttribute="top" id="Cok-jS-9ib"/>
+                                                <constraint firstAttribute="bottom" secondItem="3vK-qG-PEd" secondAttribute="bottom" constant="8" id="S2r-3T-snm"/>
+                                                <constraint firstItem="3vK-qG-PEd" firstAttribute="leading" secondItem="3zU-sp-f7F" secondAttribute="leading" constant="8" id="U2A-JO-V7X"/>
+                                                <constraint firstItem="3vK-qG-PEd" firstAttribute="top" secondItem="3zU-sp-f7F" secondAttribute="top" constant="8" id="U9q-mt-hUA"/>
                                                 <constraint firstItem="B0n-i1-0VP" firstAttribute="leading" secondItem="3vK-qG-PEd" secondAttribute="trailing" constant="8" id="ViR-ku-oyF"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="3vK-qG-PEd" secondAttribute="leading" id="WMq-ab-Gob"/>
                                                 <constraint firstItem="0lC-ed-ftW" firstAttribute="centerY" secondItem="3zU-sp-f7F" secondAttribute="centerY" id="lNT-cO-wlc"/>
@@ -321,6 +364,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="2P9-vb-58L"/>
+                                                    <exclude reference="WMq-ab-Gob"/>
+                                                    <exclude reference="qrv-jy-Bfo"/>
                                                     <exclude reference="qVj-01-AFo"/>
                                                 </mask>
                                             </variation>
@@ -338,8 +384,8 @@
                                     <outlet property="delegate" destination="dN9-EE-66z" id="PEe-lk-dCh"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are your top three values. Take some time to ask yourself what each value means to you!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-i1-DPb">
-                                <rect key="frame" x="20" y="72" width="560" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voilà! Here are your top three values. Take some time to ask yourself what each value means to you!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-i1-DPb">
+                                <rect key="frame" x="20" y="80" width="560" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -349,7 +395,7 @@
                         <constraints>
                             <constraint firstItem="1Hj-dN-39y" firstAttribute="top" secondItem="8Nf-i1-DPb" secondAttribute="bottom" constant="20" id="1XT-XE-NfU"/>
                             <constraint firstItem="8Nf-i1-DPb" firstAttribute="trailing" secondItem="E7j-eu-B52" secondAttribute="trailingMargin" id="BI4-G0-Ig9"/>
-                            <constraint firstItem="8Nf-i1-DPb" firstAttribute="top" secondItem="39Q-qn-mdF" secondAttribute="bottom" constant="8" id="CeY-2O-yM5"/>
+                            <constraint firstItem="8Nf-i1-DPb" firstAttribute="top" secondItem="39Q-qn-mdF" secondAttribute="bottom" constant="16" id="CeY-2O-yM5"/>
                             <constraint firstItem="8Nf-i1-DPb" firstAttribute="leading" secondItem="E7j-eu-B52" secondAttribute="leading" constant="20" id="HH1-3y-cQo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Hj-dN-39y" secondAttribute="trailing" id="V4d-Pb-8xE"/>
                             <constraint firstAttribute="trailing" secondItem="8Nf-i1-DPb" secondAttribute="trailing" constant="20" id="dN3-nR-MAs"/>
