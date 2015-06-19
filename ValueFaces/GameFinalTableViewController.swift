@@ -19,14 +19,6 @@ class GameFinalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Testing! should remove after test is completed.
-        topSixValues = [Value(imageName: "achievement", aText: "Achievement"),
-            Value(imageName: "balance", aText: "Balance"),
-            Value(imageName: "beauty", aText: "Beauty"),
-            Value(imageName: "career", aText: "Career"),
-            Value(imageName: "family", aText: "Family"),
-            Value(imageName: "freedom", aText: "Freedom")]
-        
         setDoneButtonLayer()
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")

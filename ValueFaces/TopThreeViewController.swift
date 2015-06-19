@@ -20,10 +20,18 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
         setGoButtonLayer()
+        
+        // Testing! should remove after test is completed.
+        topThreeValues = [Value(imageName: "achievement", aText: "Achievement"),
+            Value(imageName: "balance", aText: "Balance"),
+            Value(imageName: "beauty", aText: "Beauty"),]
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.navigationBarHidden = true
+        navigationItem.hidesBackButton = true
         
         tableView.reloadData()
     }
@@ -50,15 +58,13 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let goalListTableViewController = segue.destinationViewController as! GoalListTableViewController
+        goalListTableViewController.topThreeValues = topThreeValues
     }
-    */
     
     // MARK: Helper Method
     
