@@ -11,6 +11,7 @@ import UIKit
 class TopThreeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var goButton: UIButton!
     
     var topThreeValues = [Value]()
     
@@ -18,6 +19,7 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setGoButtonLayer()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,5 +59,13 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Helper Method
+    
+    func setGoButtonLayer() {
+        goButton.layer.borderWidth = 2.0
+        goButton.layer.borderColor = UIColor.whiteColor().CGColor
+        goButton.layer.cornerRadius = goButton.frame.size.height / 2.0
+    }
 
 }

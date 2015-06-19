@@ -20,16 +20,14 @@ class WelcomeViewController: UIViewController {
         
         navigationController?.navigationBarHidden = true
         
+        setButtonLayer()
+    }
+
+    func setButtonLayer() {
         goButton.layer.borderWidth = buttonBorderWith
         goButton.layer.borderColor = UIColor.whiteColor().CGColor
         goButton.layer.cornerRadius = goButton.frame.size.height / cornerRadiusDivider
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

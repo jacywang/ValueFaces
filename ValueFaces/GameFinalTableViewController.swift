@@ -27,9 +27,7 @@ class GameFinalTableViewController: UITableViewController {
             Value(imageName: "family", aText: "Family"),
             Value(imageName: "freedom", aText: "Freedom")]
         
-        doneButton.layer.borderWidth = 1.0
-        doneButton.layer.borderColor = UIColor.whiteColor().CGColor
-        doneButton.layer.cornerRadius = doneButton.frame.size.height / 2.0
+        setDoneButtonLayer()
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         tableView.addGestureRecognizer(longPress)
@@ -97,6 +95,12 @@ class GameFinalTableViewController: UITableViewController {
     }
 
     // MARK: Help Method
+    
+    func setDoneButtonLayer() {
+        doneButton.layer.borderWidth = 2.0
+        doneButton.layer.borderColor = UIColor.whiteColor().CGColor
+        doneButton.layer.cornerRadius = doneButton.frame.size.height / 2.0
+    }
     
     func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {
         let state = sender.state as UIGestureRecognizerState
