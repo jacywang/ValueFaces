@@ -28,6 +28,8 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
         navigationController?.navigationBarHidden = true
         navigationItem.hidesBackButton = true
         
+        StatusBarManager.setStatusBarBlack(false)
+        
         tableView.reloadData()
     }
 
