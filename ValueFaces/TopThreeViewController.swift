@@ -20,11 +20,6 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
         setGoButtonLayer()
-        
-        // Testing! should remove after test is completed.
-        topThreeValues = [Value(imageName: "achievement", aText: "Achievement"),
-            Value(imageName: "balance", aText: "Balance"),
-            Value(imageName: "beauty", aText: "Beauty"),]
     }
     
     override func viewWillAppear(animated: Bool) {
