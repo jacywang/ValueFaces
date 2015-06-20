@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate {
+class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UITextViewDelegate {
 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,14 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     @IBAction func saveButtonPressed(sender: UIButton) {
     }
     
+    // MARK: - Text View Delegate
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.text == "Write here ..." {
+            textView.text = ""
+        }
+    }
+    
     // MARK: - AKPickerView Data Source
     
     func numberOfItemsInPickerView(pickerView: AKPickerView) -> Int {
@@ -67,6 +76,9 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     }
     
     // MARK: - AKPickerView Delegate
+    func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
+        //
+    }
     
     // MARK: - Helper Method
     

@@ -230,6 +230,7 @@
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                     <state key="normal" title="DONE"/>
                                     <connections>
+                                        <action selector="doneButtonPressed:" destination="7qO-0U-SRU" eventType="touchUpInside" id="IYf-Ip-0Tc"/>
                                         <segue destination="dN9-EE-66z" kind="show" identifier="showTopThree" id="0PE-sE-ln7"/>
                                     </connections>
                                 </button>
@@ -537,6 +538,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pXe-gx-EEE" id="aeI-Hw-aIE"/>
+                                </connections>
                             </textView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-EM-MNm">
                                 <rect key="frame" x="0.0" y="20" width="600" height="30"/>
@@ -593,6 +597,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="alR-3x-XGO" id="KhY-HN-HAA"/>
                         <outlet property="saveButton" destination="iif-k0-G7P" id="Y44-gM-BON"/>
+                        <outlet property="textView" destination="XIf-tU-KDt" id="b0w-XU-zAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Kg-6e-O1i" userLabel="First Responder" sceneMemberID="firstResponder"/>

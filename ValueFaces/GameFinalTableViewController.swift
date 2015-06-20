@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameFinalTableViewController: UITableViewController {
 
@@ -86,12 +87,33 @@ class GameFinalTableViewController: UITableViewController {
         }
     }
 
-    // MARK: Help Method
+    // MARK: Helper Method
     
     func setDoneButtonLayer() {
         doneButton.layer.borderWidth = 2.0
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = doneButton.frame.size.height / 2.0
+    }
+    
+    @IBAction func doneButtonPressed(sender: UIButton) {
+        let appDeledate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDeledate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("TopValue", inManagedObjectContext: managedContext)
+        
+        for value in topSixValues[0...2] {
+            let topValue = NSManagedObject(entity: entity!,
+                insertIntoManagedObjectContext:managedContext)
+            
+            topValue.setValue(value.text, forKey: "name")
+            
+            do {
+                try managedContext.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
     }
     
     func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {

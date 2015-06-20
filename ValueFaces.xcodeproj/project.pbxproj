@@ -30,6 +30,10 @@
 		9CA99FD41B337EA3000520ED /* TopThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FD31B337EA3000520ED /* TopThreeTableViewCell.swift */; };
 		9CA99FD61B338874000520ED /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FD51B338874000520ED /* CustomHeaderView.swift */; };
 		9CA99FD81B34AB8B000520ED /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99FD71B34AB8B000520ED /* GoalListTableViewController.swift */; };
+		9CCA2F271B362A3900ABCE8F /* Action+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F251B362A3900ABCE8F /* Action+CoreDataProperties.swift */; };
+		9CCA2F281B362A3900ABCE8F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F261B362A3900ABCE8F /* Action.swift */; };
+		9CCA2F2B1B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F291B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift */; };
+		9CCA2F2C1B362A3A00ABCE8F /* TopValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F2A1B362A3A00ABCE8F /* TopValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		9CA99FD31B337EA3000520ED /* TopThreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopThreeTableViewCell.swift; sourceTree = "<group>"; };
 		9CA99FD51B338874000520ED /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		9CA99FD71B34AB8B000520ED /* GoalListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
+		9CCA2F251B362A3900ABCE8F /* Action+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Action+CoreDataProperties.swift"; path = "../Action+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9CCA2F261B362A3900ABCE8F /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ../Action.swift; sourceTree = "<group>"; };
+		9CCA2F291B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TopValue+CoreDataProperties.swift"; path = "../TopValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9CCA2F2A1B362A3A00ABCE8F /* TopValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopValue.swift; path = ../TopValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 		9CA99F891B2FA33C000520ED /* ValueFaces */ = {
 			isa = PBXGroup;
 			children = (
+				9CCA2F2D1B362A5B00ABCE8F /* CoreDataEntity */,
 				9CA99F8A1B2FA33C000520ED /* AppDelegate.swift */,
 				9CA99F8C1B2FA33C000520ED /* WelcomeViewController.swift */,
 				9CA99FBB1B2FD747000520ED /* GameCollectionViewController.swift */,
@@ -136,9 +145,9 @@
 				9CA99FD51B338874000520ED /* CustomHeaderView.swift */,
 				9CA99FBD1B2FE103000520ED /* ValueCollectionViewCell.swift */,
 				9CA99FC91B320D52000520ED /* ValueCardView.swift */,
+				9CA99FBF1B30DC46000520ED /* Value.swift */,
 				9CA99FCB1B324C03000520ED /* GameFinalTableViewController.swift */,
 				9CA99FCD1B327330000520ED /* ValueTableViewCell.swift */,
-				9CA99FBF1B30DC46000520ED /* Value.swift */,
 				9CA99FD11B337BFF000520ED /* TopThreeViewController.swift */,
 				9CA99FD31B337EA3000520ED /* TopThreeTableViewCell.swift */,
 				9CA99FD71B34AB8B000520ED /* GoalListTableViewController.swift */,
@@ -171,6 +180,17 @@
 				9CA99FAF1B2FA33D000520ED /* Info.plist */,
 			);
 			path = ValueFacesUITests;
+			sourceTree = "<group>";
+		};
+		9CCA2F2D1B362A5B00ABCE8F /* CoreDataEntity */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F291B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift */,
+				9CCA2F2A1B362A3A00ABCE8F /* TopValue.swift */,
+				9CCA2F251B362A3900ABCE8F /* Action+CoreDataProperties.swift */,
+				9CCA2F261B362A3900ABCE8F /* Action.swift */,
+			);
+			name = CoreDataEntity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,14 +328,18 @@
 				9CA99FCC1B324C03000520ED /* GameFinalTableViewController.swift in Sources */,
 				9CA99FD41B337EA3000520ED /* TopThreeTableViewCell.swift in Sources */,
 				9CA99F8D1B2FA33C000520ED /* WelcomeViewController.swift in Sources */,
+				9CCA2F2B1B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift in Sources */,
 				9CA99FCA1B320D52000520ED /* ValueCardView.swift in Sources */,
 				9C7FA6911B35345700CF2863 /* AddReflectionViewController.swift in Sources */,
+				9CCA2F2C1B362A3A00ABCE8F /* TopValue.swift in Sources */,
 				9CA99FC01B30DC46000520ED /* Value.swift in Sources */,
 				9CA99FD81B34AB8B000520ED /* GoalListTableViewController.swift in Sources */,
+				9CCA2F271B362A3900ABCE8F /* Action+CoreDataProperties.swift in Sources */,
 				9C7FA6951B35F9A200CF2863 /* AKPickerView.swift in Sources */,
 				9CA99FC61B31EC85000520ED /* CustomFlowLayout.swift in Sources */,
 				9CA99FBE1B2FE103000520ED /* ValueCollectionViewCell.swift in Sources */,
 				9CA99FC21B30E738000520ED /* UIColor+ExtraColor.swift in Sources */,
+				9CCA2F281B362A3900ABCE8F /* Action.swift in Sources */,
 				9CA99F8B1B2FA33C000520ED /* AppDelegate.swift in Sources */,
 				9CA99FD61B338874000520ED /* CustomHeaderView.swift in Sources */,
 				9CA99FD01B335363000520ED /* StatusBarManager.swift in Sources */,
