@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UITextViewDelegate {
 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var textView: UITextView!
+    
+    var topThreeValues = [TopValue]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +26,15 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         StatusBarManager.setStatusBarBlack(false)
+        
+        fetchTopThreeValues()
         
         let pickerView = AKPickerView(frame: CGRectMake(0, 20, view.frame.width, 30))
         pickerView.delegate = self
         pickerView.dataSource = self
         view.addSubview(pickerView)
-//        pickerView.reloadData()
     }
     
     // MARK: - Navigation
@@ -41,6 +46,7 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     }
     
     @IBAction func cancelButtonPressed(sender: UIButton) {
+        textView.resignFirstResponder()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -64,11 +70,11 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     func pickerView(pickerView: AKPickerView, titleForItem item: Int) -> String {
         switch item {
         case 0:
-            return "Achievement"
+            return topThreeValues[0].name!
         case 1:
-            return "Reponsibility"
+            return topThreeValues[1].name!
         case 2:
-            return "Career"
+            return topThreeValues[2].name!
         default:
             return ""
         }
@@ -90,5 +96,19 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
         saveButton.layer.borderWidth = 2.0
         saveButton.layer.borderColor = UIColor.whiteColor().CGColor
         saveButton.layer.cornerRadius = saveButton.frame.size.height / 2.0
+    }
+    
+    func fetchTopThreeValues() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "TopValue")
+        
+        do {
+            topThreeValues = try managedContext.executeFetchRequest(fetchRequest) as! [TopValue]
+            // success ...
+        } catch let error as NSError {
+            // failure
+            print("Fetch failed: \(error.localizedDescription)")
+        }
     }
 }

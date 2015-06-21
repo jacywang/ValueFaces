@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pXe-gx-EEE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fl5-Sl-4Ss">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
@@ -507,7 +507,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iif-k0-G7P">
-                                <rect key="frame" x="450" y="360" width="50" height="50"/>
+                                <rect key="frame" x="450" y="340" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="B9g-X9-3eR"/>
                                     <constraint firstAttribute="height" constant="50" id="cBS-tc-JMg"/>
@@ -521,7 +521,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alR-3x-XGO">
-                                <rect key="frame" x="100" y="360" width="50" height="50"/>
+                                <rect key="frame" x="100" y="340" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="c7e-eB-YBV"/>
                                     <constraint firstAttribute="height" constant="50" id="fh2-VT-37T"/>
@@ -537,7 +537,7 @@
                                 <rect key="frame" x="0.0" y="70" width="600" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="pXe-gx-EEE" id="aeI-Hw-aIE"/>
                                 </connections>
@@ -561,8 +561,8 @@
                             <constraint firstAttribute="trailing" secondItem="lgd-EM-MNm" secondAttribute="trailing" id="Huc-2q-VIO"/>
                             <constraint firstItem="XIf-tU-KDt" firstAttribute="leading" secondItem="wX8-L7-vWc" secondAttribute="leading" id="QZU-5R-dx4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iif-k0-G7P" secondAttribute="trailing" constant="80" id="Ubs-mS-Hss"/>
-                            <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="50" id="UiG-fM-UJS"/>
-                            <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="50" id="a2O-pL-JLF"/>
+                            <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="30" id="UiG-fM-UJS"/>
+                            <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="30" id="a2O-pL-JLF"/>
                             <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="rNN-vf-8Aw" secondAttribute="bottom" id="jPn-bW-daG"/>
                             <constraint firstItem="XIf-tU-KDt" firstAttribute="height" secondItem="wX8-L7-vWc" secondAttribute="height" multiplier="0.4" id="jyt-SV-TZ0"/>
                             <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="rNN-vf-8Aw" secondAttribute="bottom" id="mfg-ub-HSx"/>

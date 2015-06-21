@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(TopValue)
+//@objc(TopValue)
 class TopValue: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass

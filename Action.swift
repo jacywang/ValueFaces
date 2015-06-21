@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Action)
+//@objc(Action)
 class Action: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass

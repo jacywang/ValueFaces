@@ -7,27 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalListTableViewController: UITableViewController {
     
-    var topThreeValues = [Value]()
+    var topThreeValues = [TopValue]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
-        // Testing! should remove after test is completed.
-        topThreeValues = [Value(imageName: "achievement", aText: "Achievement"),
-            Value(imageName: "balance", aText: "Balance"),
-            Value(imageName: "beauty", aText: "Beauty"),]
-        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBarHidden = false
         navigationController?.hidesBarsOnSwipe = true
+        
+        fetchTopThreeValues()
     }
 
     // MARK: - Table view data source
@@ -50,7 +48,8 @@ class GoalListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return topThreeValues[section].text
+        
+        return topThreeValues[section].name
     }
 
     // Override to support conditional editing of the table view.
@@ -114,4 +113,19 @@ class GoalListTableViewController: UITableViewController {
     }
     */
 
+    // MARK: - Helper Method
+    
+    func fetchTopThreeValues() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "TopValue")
+        
+        do {
+            topThreeValues = try managedContext.executeFetchRequest(fetchRequest) as! [TopValue]
+            // success ...
+        } catch let error as NSError {
+            // failure
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+    }
 }

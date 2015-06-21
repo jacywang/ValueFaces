@@ -21,6 +21,7 @@ class GameFinalTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setDoneButtonLayer()
+        deleteOldRecordsInCoreData()
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         tableView.addGestureRecognizer(longPress)
@@ -102,7 +103,7 @@ class GameFinalTableViewController: UITableViewController {
         
         for value in topSixValues[0...2] {
             let topValue = NSManagedObject(entity: entity!,
-                insertIntoManagedObjectContext:managedContext)
+                insertIntoManagedObjectContext:managedContext) as! TopValue
             
             topValue.setValue(value.text, forKey: "name")
             
@@ -114,6 +115,38 @@ class GameFinalTableViewController: UITableViewController {
                 abort()
             }
         }
+    }
+    
+    func deleteOldRecordsInCoreData() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "TopValue")
+        
+        var oldTopThreeValues = [TopValue]()
+        
+        do {
+            oldTopThreeValues = try managedContext.executeFetchRequest(fetchRequest) as! [TopValue]
+            // success ...
+            if (oldTopThreeValues.first != nil) {
+                for value in oldTopThreeValues {
+                    managedContext.deleteObject(value)
+                }
+                
+                do {
+                    try managedContext.save()
+                } catch {
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+            }
+        } catch let error as NSError {
+            // failure
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        
+
     }
     
     func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {

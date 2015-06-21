@@ -55,14 +55,6 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let goalListTableViewController = segue.destinationViewController as! GoalListTableViewController
-        goalListTableViewController.topThreeValues = topThreeValues
-    }
-    
     // MARK: Helper Method
     
     func setGoButtonLayer() {
