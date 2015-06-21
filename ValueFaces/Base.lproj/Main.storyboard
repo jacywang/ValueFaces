@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fl5-Sl-4Ss">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxf-mk-FJh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
@@ -23,6 +23,8 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Italic</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-LightItalic</string>
@@ -462,18 +464,54 @@
         <scene sceneID="fge-jV-FLx">
             <objects>
                 <tableViewController id="Sxf-mk-FJh" customClass="GoalListTableViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tyE-iX-AkR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="tyE-iX-AkR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8IJ-30-nbk">
-                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8IJ-30-nbk" customClass="GoalListTableViewCell" customModule="ValueFaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8IJ-30-nbk" id="OGA-LB-PlN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzN-7N-a8f">
+                                            <rect key="frame" x="8" y="8" width="584" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="7GU-xI-yrd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-Ug-BDm">
+                                            <rect key="frame" x="8" y="28" width="584" height="30.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RzN-7N-a8f" firstAttribute="trailing" secondItem="OGA-LB-PlN" secondAttribute="trailingMargin" id="3oa-Xo-WRf"/>
+                                        <constraint firstAttribute="bottom" secondItem="cRl-Ug-BDm" secondAttribute="bottom" constant="1" id="93V-7t-5Kc"/>
+                                        <constraint firstAttribute="trailing" secondItem="cRl-Ug-BDm" secondAttribute="trailing" constant="8" id="eQS-Qb-6hv"/>
+                                        <constraint firstItem="cRl-Ug-BDm" firstAttribute="leading" secondItem="OGA-LB-PlN" secondAttribute="leading" constant="8" id="iAg-pb-r5E"/>
+                                        <constraint firstItem="cRl-Ug-BDm" firstAttribute="top" secondItem="RzN-7N-a8f" secondAttribute="bottom" constant="8" id="qP9-9D-ONI"/>
+                                        <constraint firstItem="RzN-7N-a8f" firstAttribute="top" secondItem="OGA-LB-PlN" secondAttribute="topMargin" id="vaY-nq-xpF"/>
+                                        <constraint firstItem="RzN-7N-a8f" firstAttribute="leading" secondItem="OGA-LB-PlN" secondAttribute="leadingMargin" id="xWa-rv-5Qf"/>
+                                        <constraint firstItem="cRl-Ug-BDm" firstAttribute="top" secondItem="RzN-7N-a8f" secondAttribute="bottom" constant="4" id="zGr-qZ-zLY"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qP9-9D-ONI"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="cRl-Ug-BDm" id="8Gi-59-qBQ"/>
+                                    <outlet property="dateLabel" destination="RzN-7N-a8f" id="dk3-3l-rL9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -16,6 +16,9 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     @IBOutlet weak var textView: UITextView!
     
     var topThreeValues = [TopValue]()
+    var selectedValue: TopValue?
+    var appDelegate: AppDelegate!
+    var managedContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +54,33 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     }
     
     @IBAction func saveButtonPressed(sender: UIButton) {
+        if selectedValue == "" {
+            selectedValue = topThreeValues[0]
+        }
+        
+        let entity = NSEntityDescription.entityForName("Action", inManagedObjectContext: managedContext)
+        
+        let action = Action(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        action.date = NSDate()
+        action.content = textView.text
+        action.topValue = selectedValue
+        
+        do {
+            try managedContext.save()
+            dismissViewControllerAnimated(true, completion: nil)
+        } catch {
+            let nserror = error as NSError
+            
+            let alertController = UIAlertController(title: "Error", message: "Please try again!", preferredStyle: .Alert)
+            let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(alertAction)
+            presentViewController(alertController, animated: true, completion: nil)
+            
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
     }
     
     // MARK: - Text View Delegate
@@ -58,6 +88,14 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.text == "Write here ..." {
             textView.text = ""
+        }
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        if textView.text != "" {
+            saveButton.enabled = true
+        } else {
+            saveButton.enabled = false
         }
     }
     
@@ -83,7 +121,7 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     
     // MARK: - AKPickerView Delegate
     func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
-        //
+        selectedValue = topThreeValues[item]
     }
     
     // MARK: - Helper Method
@@ -99,8 +137,8 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
     }
     
     func fetchTopThreeValues() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "TopValue")
         
         do {

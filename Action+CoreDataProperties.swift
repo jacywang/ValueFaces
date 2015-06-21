@@ -15,7 +15,7 @@ import CoreData
 extension Action {
 
     @NSManaged var content: String?
-    @NSManaged var date: NSTimeInterval
+    @NSManaged var date: NSDate
     @NSManaged var topValue: NSManagedObject?
 
 }

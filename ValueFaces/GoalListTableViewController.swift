@@ -12,6 +12,7 @@ import CoreData
 class GoalListTableViewController: UITableViewController {
     
     var topThreeValues = [TopValue]()
+    var actionArray = [[Action]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class GoalListTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
         
         fetchTopThreeValues()
+        
+        for value in topThreeValues {
+            actionArray.append(value.action?.allObjects as! [Action])
+        }
     }
 
     // MARK: - Table view data source
@@ -35,14 +40,14 @@ class GoalListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return actionArray[section].count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GoalListTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Test"
+        cell.configure(actionArray[indexPath.section][indexPath.row])
         
         return cell
     }
@@ -72,7 +77,6 @@ class GoalListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 
     }
-
 
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
