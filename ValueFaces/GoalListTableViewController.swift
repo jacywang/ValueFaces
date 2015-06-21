@@ -16,9 +16,7 @@ class GoalListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-    
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -28,9 +26,7 @@ class GoalListTableViewController: UITableViewController {
         
         fetchTopThreeValues()
         
-        for value in topThreeValues {
-            actionArray.append(value.action?.allObjects as! [Action])
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -53,7 +49,6 @@ class GoalListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return topThreeValues[section].name
     }
 
@@ -120,6 +115,10 @@ class GoalListTableViewController: UITableViewController {
     // MARK: - Helper Method
     
     func fetchTopThreeValues() {
+        if actionArray.count > 0 {
+            actionArray.removeAll()
+        }
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "TopValue")
@@ -127,6 +126,10 @@ class GoalListTableViewController: UITableViewController {
         do {
             topThreeValues = try managedContext.executeFetchRequest(fetchRequest) as! [TopValue]
             // success ...
+            
+            for value in topThreeValues {
+                actionArray.append(value.action?.allObjects as! [Action])
+            }
         } catch let error as NSError {
             // failure
             print("Fetch failed: \(error.localizedDescription)")
