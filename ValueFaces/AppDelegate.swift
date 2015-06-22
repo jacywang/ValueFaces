@@ -13,9 +13,27 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var layerClient: LYRClient!
+    
+    // MARK: - Setup IDs
+    let LayerAppIDString: NSUUID! = NSUUID(UUIDString: "0a4badf2-1919-11e5-ab63-27936d001b74")
+    let ParseAppIDString: String = "dtb0ftPHwmIZI1urVOvFVbD8AbBbvPIQw82mXslA"
+    let ParseClientKeyString: String = "UvjRqV9xwtN5cFGjoSf80PP6trZZTN4KetpWYWbg"
+    
+    // MARK: - Create LYRConversation
+    var conversation: LYRConversation!
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setupParse()
+        
+        layerClient = LYRClient(appID: LayerAppIDString)
+        
+        // Show View Controller
+        let tabBarViewController = window!.rootViewController as! UITabBarController
+        let navigationController = tabBarViewController.viewControllers![2] as! UINavigationController
+        let friendsViewController = navigationController.viewControllers[0] as! FriendsViewController
+        friendsViewController.layerClient = layerClient
         
         return true
     }
@@ -106,6 +124,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    // MARK: - Setup Parse 
+    func setupParse() {
+        // Enable Parse local data store for user persistence
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId(ParseAppIDString, clientKey: ParseClientKeyString)
+        
+        // Set default ACLs
+        let defaultACL: PFACL = PFACL()
+        defaultACL.setPublicReadAccess(true)
+        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
     }
 }
 

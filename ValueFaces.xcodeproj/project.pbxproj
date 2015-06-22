@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAC466A416FBE1A6D160C5A /* libPods-ValueFaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9339037BA5A787B64DCF5FD2 /* libPods-ValueFaces.a */; };
 		9C7FA6911B35345700CF2863 /* AddReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FA6901B35345700CF2863 /* AddReflectionViewController.swift */; };
 		9C7FA6951B35F9A200CF2863 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FA6941B35F9A200CF2863 /* AKPickerView.swift */; };
 		9CA99F8B1B2FA33C000520ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99F8A1B2FA33C000520ED /* AppDelegate.swift */; };
@@ -35,6 +36,13 @@
 		9CCA2F2B1B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F291B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift */; };
 		9CCA2F2C1B362A3A00ABCE8F /* TopValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F2A1B362A3A00ABCE8F /* TopValue.swift */; };
 		9CCA2F2F1B37338A00ABCE8F /* GoalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F2E1B37338A00ABCE8F /* GoalListTableViewCell.swift */; };
+		9CCA2F331B38B23600ABCE8F /* PFUser+ATLParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F321B38B23600ABCE8F /* PFUser+ATLParticipant.swift */; };
+		9CCA2F391B38B24800ABCE8F /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F351B38B24800ABCE8F /* ConversationListViewController.swift */; };
+		9CCA2F3A1B38B24800ABCE8F /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F361B38B24800ABCE8F /* ConversationViewController.swift */; };
+		9CCA2F3B1B38B24800ABCE8F /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F371B38B24800ABCE8F /* ParticipantTableViewController.swift */; };
+		9CCA2F3C1B38B24800ABCE8F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F381B38B24800ABCE8F /* FriendsViewController.swift */; };
+		9CCA2F401B38B27B00ABCE8F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */; };
+		9CCA2F441B38B74400ABCE8F /* ValueFaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F431B38B74400ABCE8F /* ValueFaces.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AE428B1C7F2DE400D0F43D /* Pods-ValueFaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValueFaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces.release.xcconfig"; sourceTree = "<group>"; };
+		9339037BA5A787B64DCF5FD2 /* libPods-ValueFaces.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ValueFaces.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7FA6901B35345700CF2863 /* AddReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReflectionViewController.swift; sourceTree = "<group>"; };
 		9C7FA6941B35F9A200CF2863 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		9CA99F871B2FA33C000520ED /* ValueFaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValueFaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +99,15 @@
 		9CCA2F291B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TopValue+CoreDataProperties.swift"; path = "../TopValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9CCA2F2A1B362A3A00ABCE8F /* TopValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopValue.swift; path = ../TopValue.swift; sourceTree = "<group>"; };
 		9CCA2F2E1B37338A00ABCE8F /* GoalListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalListTableViewCell.swift; sourceTree = "<group>"; };
+		9CCA2F321B38B23600ABCE8F /* PFUser+ATLParticipant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+ATLParticipant.swift"; sourceTree = "<group>"; };
+		9CCA2F351B38B24800ABCE8F /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
+		9CCA2F361B38B24800ABCE8F /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		9CCA2F371B38B24800ABCE8F /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
+		9CCA2F381B38B24800ABCE8F /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		9CCA2F421B38B74300ABCE8F /* ValueFaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValueFaces-Bridging-Header.h"; sourceTree = "<group>"; };
+		9CCA2F431B38B74400ABCE8F /* ValueFaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueFaces.m; sourceTree = "<group>"; };
+		C18E1AFEAA1545091CAE9697 /* Pods-ValueFaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValueFaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAC466A416FBE1A6D160C5A /* libPods-ValueFaces.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00B78C87D057A9C4E8481C71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9339037BA5A787B64DCF5FD2 /* libPods-ValueFaces.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9CA99F7E1B2FA33C000520ED = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +151,8 @@
 				9CA99FA11B2FA33D000520ED /* ValueFacesTests */,
 				9CA99FAC1B2FA33D000520ED /* ValueFacesUITests */,
 				9CA99F881B2FA33C000520ED /* Products */,
+				EBEE1388B8FC0F99F49FB586 /* Pods */,
+				00B78C87D057A9C4E8481C71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +169,7 @@
 		9CA99F891B2FA33C000520ED /* ValueFaces */ = {
 			isa = PBXGroup;
 			children = (
+				9CCA2F301B38B20900ABCE8F /* Layer */,
 				9CCA2F2D1B362A5B00ABCE8F /* CoreDataEntity */,
 				9CA99F8A1B2FA33C000520ED /* AppDelegate.swift */,
 				9CA99F8C1B2FA33C000520ED /* WelcomeViewController.swift */,
@@ -196,6 +227,62 @@
 			name = CoreDataEntity;
 			sourceTree = "<group>";
 		};
+		9CCA2F301B38B20900ABCE8F /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F451B38B76B00ABCE8F /* Bridging */,
+				9CCA2F3E1B38B27B00ABCE8F /* Models */,
+				9CCA2F341B38B24800ABCE8F /* Controllers */,
+				9CCA2F311B38B23600ABCE8F /* Extensions */,
+			);
+			name = Layer;
+			sourceTree = "<group>";
+		};
+		9CCA2F311B38B23600ABCE8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F321B38B23600ABCE8F /* PFUser+ATLParticipant.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9CCA2F341B38B24800ABCE8F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F351B38B24800ABCE8F /* ConversationListViewController.swift */,
+				9CCA2F361B38B24800ABCE8F /* ConversationViewController.swift */,
+				9CCA2F371B38B24800ABCE8F /* ParticipantTableViewController.swift */,
+				9CCA2F381B38B24800ABCE8F /* FriendsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9CCA2F3E1B38B27B00ABCE8F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9CCA2F451B38B76B00ABCE8F /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				9CCA2F421B38B74300ABCE8F /* ValueFaces-Bridging-Header.h */,
+				9CCA2F431B38B74400ABCE8F /* ValueFaces.m */,
+			);
+			name = Bridging;
+			sourceTree = "<group>";
+		};
+		EBEE1388B8FC0F99F49FB586 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C18E1AFEAA1545091CAE9697 /* Pods-ValueFaces.debug.xcconfig */,
+				18AE428B1C7F2DE400D0F43D /* Pods-ValueFaces.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CA99FB21B2FA33D000520ED /* Build configuration list for PBXNativeTarget "ValueFaces" */;
 			buildPhases = (
+				96F03346ABFC03A43A641556 /* Check Pods Manifest.lock */,
 				9CA99F831B2FA33C000520ED /* Sources */,
 				9CA99F841B2FA33C000520ED /* Frameworks */,
 				9CA99F851B2FA33C000520ED /* Resources */,
+				C4EFEEB6388730E1ACFBF641 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +347,7 @@
 		9CA99F7F1B2FA33C000520ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = JWANG;
 				TargetAttributes = {
@@ -322,6 +412,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		96F03346ABFC03A43A641556 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4EFEEB6388730E1ACFBF641 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CA99F831B2FA33C000520ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,8 +454,12 @@
 				9CA99FCC1B324C03000520ED /* GameFinalTableViewController.swift in Sources */,
 				9CA99FD41B337EA3000520ED /* TopThreeTableViewCell.swift in Sources */,
 				9CA99F8D1B2FA33C000520ED /* WelcomeViewController.swift in Sources */,
+				9CCA2F3B1B38B24800ABCE8F /* ParticipantTableViewController.swift in Sources */,
 				9CCA2F2B1B362A3A00ABCE8F /* TopValue+CoreDataProperties.swift in Sources */,
 				9CA99FCA1B320D52000520ED /* ValueCardView.swift in Sources */,
+				9CCA2F401B38B27B00ABCE8F /* UserManager.swift in Sources */,
+				9CCA2F331B38B23600ABCE8F /* PFUser+ATLParticipant.swift in Sources */,
+				9CCA2F391B38B24800ABCE8F /* ConversationListViewController.swift in Sources */,
 				9C7FA6911B35345700CF2863 /* AddReflectionViewController.swift in Sources */,
 				9CCA2F2C1B362A3A00ABCE8F /* TopValue.swift in Sources */,
 				9CA99FC01B30DC46000520ED /* Value.swift in Sources */,
@@ -341,12 +468,15 @@
 				9C7FA6951B35F9A200CF2863 /* AKPickerView.swift in Sources */,
 				9CA99FC61B31EC85000520ED /* CustomFlowLayout.swift in Sources */,
 				9CA99FBE1B2FE103000520ED /* ValueCollectionViewCell.swift in Sources */,
+				9CCA2F3A1B38B24800ABCE8F /* ConversationViewController.swift in Sources */,
+				9CCA2F3C1B38B24800ABCE8F /* FriendsViewController.swift in Sources */,
 				9CA99FC21B30E738000520ED /* UIColor+ExtraColor.swift in Sources */,
 				9CCA2F281B362A3900ABCE8F /* Action.swift in Sources */,
 				9CA99F8B1B2FA33C000520ED /* AppDelegate.swift in Sources */,
 				9CA99FD61B338874000520ED /* CustomHeaderView.swift in Sources */,
 				9CA99FD01B335363000520ED /* StatusBarManager.swift in Sources */,
 				9CA99FD21B337BFF000520ED /* TopThreeViewController.swift in Sources */,
+				9CCA2F441B38B74400ABCE8F /* ValueFaces.m in Sources */,
 				9CA99FBC1B2FD747000520ED /* GameCollectionViewController.swift in Sources */,
 				9CCA2F2F1B37338A00ABCE8F /* GoalListTableViewCell.swift in Sources */,
 				9CA99F931B2FA33C000520ED /* ValueFaces.xcdatamodeld in Sources */,
@@ -489,8 +619,10 @@
 		};
 		9CA99FB31B2FA33D000520ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C18E1AFEAA1545091CAE9697 /* Pods-ValueFaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ValueFaces/Info.plist;
@@ -499,13 +631,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.ValueFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ValueFaces/ValueFaces-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9CA99FB41B2FA33D000520ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18AE428B1C7F2DE400D0F43D /* Pods-ValueFaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ValueFaces/Info.plist;
@@ -514,6 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.ValueFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ValueFaces/ValueFaces-Bridging-Header.h";
 			};
 			name = Release;
 		};

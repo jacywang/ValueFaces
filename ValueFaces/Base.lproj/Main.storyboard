@@ -22,9 +22,9 @@
             <string>HelveticaNeue-Italic</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue-Italic</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-LightItalic</string>
@@ -473,6 +473,7 @@
                     <connections>
                         <segue destination="YIB-ny-xJ5" kind="relationship" relationship="viewControllers" id="pNb-uN-KS0"/>
                         <segue destination="fl5-Sl-4Ss" kind="relationship" relationship="viewControllers" id="vVe-8s-t6D"/>
+                        <segue destination="m8B-oB-xyb" kind="relationship" relationship="viewControllers" id="vmL-g7-dcG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVu-Hf-no2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -697,6 +698,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLe-mO-ajQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245" y="1400"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="bjE-K1-fj4">
+            <objects>
+                <viewController id="wJV-B5-jOT" customClass="FriendsViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NvJ-Lh-VYj"/>
+                        <viewControllerLayoutGuide type="bottom" id="4rG-s8-zG0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yew-It-PyM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="crl-E7-fuM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffM-Uq-m9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="2138"/>
+        </scene>
+        <!--Friend-->
+        <scene sceneID="d7g-bU-KhI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m8B-oB-xyb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friend" id="VVV-q9-Ooz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="twX-CI-8Cp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wJV-B5-jOT" kind="relationship" relationship="rootViewController" id="TzN-I3-QKv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVl-J1-bCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="2138"/>
         </scene>
     </scenes>
     <resources>
