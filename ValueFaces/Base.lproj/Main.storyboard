@@ -402,7 +402,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrA-Ft-dGQ">
-                                <rect key="frame" x="270" y="495" width="60" height="60"/>
+                                <rect key="frame" x="270" y="510" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="EJQ-fY-hur"/>
                                     <constraint firstAttribute="height" constant="60" id="rVg-Wv-aoE"/>
@@ -415,8 +415,8 @@
                                     <segue destination="Sxf-mk-FJh" kind="show" id="K8N-s9-hvP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to record your actions?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkH-xC-9ns">
-                                <rect key="frame" x="20" y="460" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Without reflection, we go blindly on our way, creating more unintended consequences, and failing to achieve anything useful." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkH-xC-9ns">
+                                <rect key="frame" x="20" y="455" width="560" height="40"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -431,7 +431,7 @@
                             <constraint firstItem="8Nf-i1-DPb" firstAttribute="leading" secondItem="E7j-eu-B52" secondAttribute="leading" constant="20" id="HH1-3y-cQo"/>
                             <constraint firstItem="lrA-Ft-dGQ" firstAttribute="centerX" secondItem="E7j-eu-B52" secondAttribute="centerX" id="Td5-OY-EPe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Hj-dN-39y" secondAttribute="trailing" id="V4d-Pb-8xE"/>
-                            <constraint firstItem="NkH-xC-9ns" firstAttribute="top" secondItem="1Hj-dN-39y" secondAttribute="bottom" constant="20" id="XRl-O7-9uN"/>
+                            <constraint firstItem="NkH-xC-9ns" firstAttribute="top" secondItem="1Hj-dN-39y" secondAttribute="bottom" constant="15" id="XRl-O7-9uN"/>
                             <constraint firstAttribute="trailing" secondItem="8Nf-i1-DPb" secondAttribute="trailing" constant="20" id="dN3-nR-MAs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="1Hj-dN-39y" secondAttribute="leading" id="ghm-Ta-R8u"/>
                             <constraint firstAttribute="trailing" secondItem="1Hj-dN-39y" secondAttribute="trailing" id="pIl-vo-l83"/>
@@ -479,7 +479,7 @@
             </objects>
             <point key="canvasLocation" x="-688" y="1400"/>
         </scene>
-        <!--Action-->
+        <!--Reflection-->
         <scene sceneID="fge-jV-FLx">
             <objects>
                 <tableViewController id="Sxf-mk-FJh" customClass="GoalListTableViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -538,7 +538,7 @@
                             <outlet property="delegate" destination="Sxf-mk-FJh" id="jqN-ef-XmG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Action" id="28f-ne-g5G">
+                    <navigationItem key="navigationItem" title="Reflection" id="28f-ne-g5G">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4h4-VL-rmr">
                             <connections>
                                 <segue destination="pXe-gx-EEE" kind="presentation" identifier="showAddGoal" id="5hB-1q-fpy"/>
