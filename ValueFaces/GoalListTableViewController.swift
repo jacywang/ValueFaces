@@ -13,6 +13,8 @@ class GoalListTableViewController: UITableViewController {
     
     var topThreeValues = [TopValue]()
     var actionArray = [[Action]]()
+    var animator: UIDynamicAnimator?
+    var valuePopView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class GoalListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBarHidden = false
         navigationController?.hidesBarsOnSwipe = true
+        
+        animator = UIDynamicAnimator(referenceView: tableView)
         
         fetchTopThreeValues()
         
@@ -100,7 +104,65 @@ class GoalListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let selectedAction = actionArray[indexPath.section][indexPath.row]
+        
+        if valuePopView == nil {
+            createValuePopView(selectedAction)
+        }
+        
+        let snapBahavior = UISnapBehavior(item: valuePopView!, snapToPoint: tableView.center)
+        
+        animator?.addBehavior(snapBahavior)
     }
+    
+    // MARK: - Setup Value Pop View
+    
+    func createValuePopView(action: Action) {
+        valuePopView = UIView(frame: CGRectMake(0, -50, 250, 300))
+        valuePopView?.backgroundColor = UIColor.manicCravingColor()
+        valuePopView?.layer.cornerRadius = 10
+        valuePopView?.layer.shadowColor = UIColor.blackColor().CGColor;
+        valuePopView?.layer.shadowOffset = CGSizeMake(0, 10);
+        valuePopView?.layer.shadowOpacity = 0.7;
+        valuePopView?.layer.shadowRadius = 5.0;
+        
+        let textView = UITextView(frame: CGRectMake(10, 30, valuePopView!.frame.width - 20, 250))
+        textView.backgroundColor = UIColor.clearColor()
+        textView.textColor = UIColor.whiteColor()
+        textView.text = action.content
+        textView.font = UIFont(name: "Helvetica Neue", size: 17)
+        textView.showsVerticalScrollIndicator = true
+        valuePopView!.addSubview(textView)
+        
+        let closeButton = UIButton(type: .System)
+        closeButton.frame = CGRectMake(valuePopView!.frame.width - 20, 0, 30, 30)
+        closeButton.tintColor = UIColor.whiteColor()
+        closeButton.setTitle("X", forState: .Normal)
+        closeButton.addTarget(self, action: "dismissValuePopView:", forControlEvents: .TouchUpInside)
+        valuePopView?.addSubview(closeButton)
+        
+        tableView.addSubview(valuePopView!)
+    }
+    
+    func dismissValuePopView(sender: UIButton) {
+        animator!.removeAllBehaviors()
+        
+        let gravityBehaviour = UIGravityBehavior(items: [valuePopView!])
+        animator?.addBehavior(gravityBehaviour)
+        
+        let itemBehaviour = UIDynamicItemBehavior(items: [valuePopView!])
+        itemBehaviour.addAngularVelocity(-CGFloat(M_PI), forItem: valuePopView!)
+        animator?.addBehavior(itemBehaviour)
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.valuePopView!.alpha = 0
+            }) { (finished: Bool) -> Void in
+                self.valuePopView!.removeFromSuperview()
+                self.valuePopView = nil
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
