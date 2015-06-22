@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class WelcomeViewController: UIViewController {
 
@@ -17,17 +18,23 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBarHidden = true
-        
-        setButtonLayer()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController!.tabBar.hidden = true
+        navigationController?.navigationBarHidden = true
+        setButtonLayer()
+
+    }
+    
+    // MARK: Helper Method
+    
     func setButtonLayer() {
         goButton.layer.borderWidth = buttonBorderWith
         goButton.layer.borderColor = UIColor.whiteColor().CGColor
         goButton.layer.cornerRadius = goButton.frame.size.height / cornerRadiusDivider
     }
-
 }
 

@@ -18,7 +18,8 @@ class GoalListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+
+        tabBarController!.tabBar.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {

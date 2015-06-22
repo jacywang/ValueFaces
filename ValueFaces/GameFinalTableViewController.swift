@@ -79,15 +79,6 @@ class GameFinalTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
     }
 
-    // MARK: - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showTopThree" {
-            let topThreeViewController = segue.destinationViewController as! TopThreeViewController
-            topThreeViewController.topThreeValues = [topSixValues[0], topSixValues[1], topSixValues[2]]
-        }
-    }
-
     // MARK: Helper Method
     
     func setDoneButtonLayer() {
@@ -115,6 +106,9 @@ class GameFinalTableViewController: UITableViewController {
                 abort()
             }
         }
+        
+        tabBarController?.selectedIndex = 0
+        navigationController?.popToRootViewControllerAnimated(false)
     }
     
     func deleteOldRecordsInCoreData() {
