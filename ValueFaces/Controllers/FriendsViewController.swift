@@ -75,6 +75,11 @@ class FriendsViewController: UIViewController, PFLogInViewControllerDelegate, PF
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
         print("Failed to log in...")
     }
+    
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        navigationController?.popToRootViewControllerAnimated(true)
+        tabBarController?.selectedIndex = 0
+    }
 
     // MARK: - PFSignUpViewControllerDelegate
 
