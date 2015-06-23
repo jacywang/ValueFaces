@@ -10,6 +10,7 @@ class ParticipantTableViewController: ATLParticipantTableViewController {
         let title = NSLocalizedString("Cancel",  comment: "")
         let cancelItem: UIBarButtonItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: Selector("handleCancelTap"))
         self.navigationItem.leftBarButtonItem = cancelItem
+        self.navigationController!.navigationBar.tintColor = UIColor.manicCravingColor()
     }
 
     // MARK - Actions

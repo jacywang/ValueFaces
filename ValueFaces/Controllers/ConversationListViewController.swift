@@ -8,7 +8,7 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
         self.dataSource = self
         self.delegate = self
         
-        self.navigationController!.navigationBar.tintColor = ATLBlueColor()
+        self.navigationController!.navigationBar.tintColor = UIColor.manicCravingColor()
         
         let title = NSLocalizedString("Logout", comment: "")
         let logoutItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: Selector("logoutButtonTapped:"))

@@ -31,9 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Show View Controller
         let tabBarViewController = window!.rootViewController as! UITabBarController
-        let navigationController = tabBarViewController.viewControllers![2] as! UINavigationController
+        let navigationController = tabBarViewController.viewControllers![1] as! UINavigationController
         let friendsViewController = navigationController.viewControllers[0] as! FriendsViewController
         friendsViewController.layerClient = layerClient
+        
+        UITabBar.appearance().tintColor = UIColor.manicCravingColor()
         
         return true
     }

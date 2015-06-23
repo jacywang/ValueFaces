@@ -43,6 +43,7 @@
 		9CCA2F3C1B38B24800ABCE8F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F381B38B24800ABCE8F /* FriendsViewController.swift */; };
 		9CCA2F401B38B27B00ABCE8F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */; };
 		9CCA2F441B38B74400ABCE8F /* ValueFaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F431B38B74400ABCE8F /* ValueFaces.m */; };
+		9CCA2F471B39EB9B00ABCE8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F461B39EB9B00ABCE8F /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		9CCA2F421B38B74300ABCE8F /* ValueFaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValueFaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		9CCA2F431B38B74400ABCE8F /* ValueFaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueFaces.m; sourceTree = "<group>"; };
+		9CCA2F461B39EB9B00ABCE8F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C18E1AFEAA1545091CAE9697 /* Pods-ValueFaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValueFaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				9CCA2F2E1B37338A00ABCE8F /* GoalListTableViewCell.swift */,
 				9C7FA6901B35345700CF2863 /* AddReflectionViewController.swift */,
 				9C7FA6941B35F9A200CF2863 /* AKPickerView.swift */,
+				9CCA2F461B39EB9B00ABCE8F /* ProfileViewController.swift */,
 				9CA99FC11B30E738000520ED /* UIColor+ExtraColor.swift */,
 				9CA99FCF1B335363000520ED /* StatusBarManager.swift */,
 				9CA99F8E1B2FA33C000520ED /* Main.storyboard */,
@@ -462,6 +465,7 @@
 				9CCA2F391B38B24800ABCE8F /* ConversationListViewController.swift in Sources */,
 				9C7FA6911B35345700CF2863 /* AddReflectionViewController.swift in Sources */,
 				9CCA2F2C1B362A3A00ABCE8F /* TopValue.swift in Sources */,
+				9CCA2F471B39EB9B00ABCE8F /* ProfileViewController.swift in Sources */,
 				9CA99FC01B30DC46000520ED /* Value.swift in Sources */,
 				9CA99FD81B34AB8B000520ED /* GoalListTableViewController.swift in Sources */,
 				9CCA2F271B362A3900ABCE8F /* Action+CoreDataProperties.swift in Sources */,
