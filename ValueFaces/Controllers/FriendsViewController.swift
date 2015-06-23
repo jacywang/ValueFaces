@@ -21,7 +21,7 @@ class FriendsViewController: UIViewController, PFLogInViewControllerDelegate, PF
             self.loginLayer()
             return
         }
-        
+
         // No user logged in
         let signupButtonBackgroundImage: UIImage = getImageWithColor(ATLBlueColor(), size: CGSize(width: 10.0, height: 10.0))
         
