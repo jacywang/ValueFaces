@@ -479,7 +479,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVu-Hf-no2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-744" y="1385"/>
+            <point key="canvasLocation" x="-1072" y="1973"/>
         </scene>
         <!--Reflection-->
         <scene sceneID="fge-jV-FLx">
@@ -717,7 +717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffM-Uq-m9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="2286"/>
+            <point key="canvasLocation" x="1021" y="2294"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ER3-xQ-QDd">
@@ -730,13 +730,56 @@
                     <view key="view" contentMode="scaleToFill" id="U5Y-Cy-4Jv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1s-Sy-Apu">
+                                <rect key="frame" x="225" y="99" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="9mS-K0-Fce"/>
+                                    <constraint firstAttribute="width" constant="150" id="CRK-Z7-NCi"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="IVG-pk-CUN" eventType="touchUpInside" id="bWr-pX-yhM"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhr-gJ-PTl">
+                                <rect key="frame" x="225" y="269" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3dl-9p-MRz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ8-ZD-NMA">
+                                <rect key="frame" x="225" y="319" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="as9-bg-QJC"/>
+                                </constraints>
+                                <state key="normal" title="Location"/>
+                                <connections>
+                                    <action selector="locationButtonPressed:" destination="IVG-pk-CUN" eventType="touchUpInside" id="f5l-H4-0Rg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dJ8-ZD-NMA" firstAttribute="top" secondItem="Qhr-gJ-PTl" secondAttribute="bottom" constant="20" id="3cB-2Q-a5x"/>
+                            <constraint firstItem="Qhr-gJ-PTl" firstAttribute="centerX" secondItem="U5Y-Cy-4Jv" secondAttribute="centerX" id="DtG-i4-J8Y"/>
+                            <constraint firstItem="w1s-Sy-Apu" firstAttribute="top" secondItem="0jZ-Xu-yht" secondAttribute="bottom" constant="35" id="Ex3-Qc-WJ2"/>
+                            <constraint firstItem="dJ8-ZD-NMA" firstAttribute="centerX" secondItem="U5Y-Cy-4Jv" secondAttribute="centerX" id="SSV-Je-10H"/>
+                            <constraint firstItem="w1s-Sy-Apu" firstAttribute="centerX" secondItem="U5Y-Cy-4Jv" secondAttribute="centerX" id="UL9-Ai-DOg"/>
+                            <constraint firstItem="Qhr-gJ-PTl" firstAttribute="top" secondItem="w1s-Sy-Apu" secondAttribute="bottom" constant="20" id="yUj-c4-w6y"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="JGx-Uh-7SF"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="w1s-Sy-Apu" id="1JO-k4-bHy"/>
+                        <outlet property="usernameTextField" destination="Qhr-gJ-PTl" id="gTR-E4-yAo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypR-l8-yY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="3070"/>
+            <point key="canvasLocation" x="1021" y="3398"/>
         </scene>
         <!--Friend-->
         <scene sceneID="d7g-bU-KhI">
@@ -755,7 +798,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVl-J1-bCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="2286"/>
+            <point key="canvasLocation" x="237" y="2294"/>
         </scene>
         <!--Profile-->
         <scene sceneID="QYT-W3-A3b">
@@ -774,11 +817,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2p-RG-wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="3070"/>
+            <point key="canvasLocation" x="229" y="3398"/>
         </scene>
     </scenes>
     <resources>
         <image name="achievement" width="150" height="136"/>
         <image name="balance" width="137" height="91"/>
+        <image name="camera" width="50" height="50"/>
     </resources>
 </document>
