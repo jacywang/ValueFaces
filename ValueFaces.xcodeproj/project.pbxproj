@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CAC466A416FBE1A6D160C5A /* libPods-ValueFaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9339037BA5A787B64DCF5FD2 /* libPods-ValueFaces.a */; };
+		9C4E68B41B3B1A8700FA405A /* GooglePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E68B31B3B1A8700FA405A /* GooglePlacesViewController.swift */; };
 		9C7FA6911B35345700CF2863 /* AddReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FA6901B35345700CF2863 /* AddReflectionViewController.swift */; };
 		9C7FA6951B35F9A200CF2863 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FA6941B35F9A200CF2863 /* AKPickerView.swift */; };
 		9CA99F8B1B2FA33C000520ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA99F8A1B2FA33C000520ED /* AppDelegate.swift */; };
@@ -44,8 +45,6 @@
 		9CCA2F401B38B27B00ABCE8F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F3F1B38B27B00ABCE8F /* UserManager.swift */; };
 		9CCA2F441B38B74400ABCE8F /* ValueFaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F431B38B74400ABCE8F /* ValueFaces.m */; };
 		9CCA2F471B39EB9B00ABCE8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F461B39EB9B00ABCE8F /* ProfileViewController.swift */; };
-		9CCA2F4A1B3A1A9900ABCE8F /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA2F481B3A1A9900ABCE8F /* GooglePlacesAutocomplete.swift */; };
-		9CCA2F4B1B3A1A9900ABCE8F /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CCA2F491B3A1A9900ABCE8F /* GooglePlacesAutocomplete.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +67,7 @@
 /* Begin PBXFileReference section */
 		18AE428B1C7F2DE400D0F43D /* Pods-ValueFaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValueFaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces.release.xcconfig"; sourceTree = "<group>"; };
 		9339037BA5A787B64DCF5FD2 /* libPods-ValueFaces.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ValueFaces.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4E68B31B3B1A8700FA405A /* GooglePlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesViewController.swift; sourceTree = "<group>"; };
 		9C7FA6901B35345700CF2863 /* AddReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReflectionViewController.swift; sourceTree = "<group>"; };
 		9C7FA6941B35F9A200CF2863 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		9CA99F871B2FA33C000520ED /* ValueFaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValueFaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,8 +111,6 @@
 		9CCA2F421B38B74300ABCE8F /* ValueFaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValueFaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		9CCA2F431B38B74400ABCE8F /* ValueFaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueFaces.m; sourceTree = "<group>"; };
 		9CCA2F461B39EB9B00ABCE8F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		9CCA2F481B3A1A9900ABCE8F /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
-		9CCA2F491B3A1A9900ABCE8F /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
 		C18E1AFEAA1545091CAE9697 /* Pods-ValueFaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValueFaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValueFaces/Pods-ValueFaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,8 +283,7 @@
 		9CCA2F4C1B3A1AB400ABCE8F /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				9CCA2F481B3A1A9900ABCE8F /* GooglePlacesAutocomplete.swift */,
-				9CCA2F491B3A1A9900ABCE8F /* GooglePlacesAutocomplete.xib */,
+				9C4E68B31B3B1A8700FA405A /* GooglePlacesViewController.swift */,
 			);
 			name = GooglePlaces;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCA2F4B1B3A1A9900ABCE8F /* GooglePlacesAutocomplete.xib in Resources */,
 				9CA99F981B2FA33C000520ED /* LaunchScreen.storyboard in Resources */,
 				9CA99F951B2FA33C000520ED /* Assets.xcassets in Resources */,
 				9CA99F901B2FA33C000520ED /* Main.storyboard in Resources */,
@@ -468,7 +464,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCA2F4A1B3A1A9900ABCE8F /* GooglePlacesAutocomplete.swift in Sources */,
 				9CA99FCE1B327330000520ED /* ValueTableViewCell.swift in Sources */,
 				9CA99FCC1B324C03000520ED /* GameFinalTableViewController.swift in Sources */,
 				9CA99FD41B337EA3000520ED /* TopThreeTableViewCell.swift in Sources */,
@@ -486,6 +481,7 @@
 				9CA99FD81B34AB8B000520ED /* GoalListTableViewController.swift in Sources */,
 				9CCA2F271B362A3900ABCE8F /* Action+CoreDataProperties.swift in Sources */,
 				9C7FA6951B35F9A200CF2863 /* AKPickerView.swift in Sources */,
+				9C4E68B41B3B1A8700FA405A /* GooglePlacesViewController.swift in Sources */,
 				9CA99FC61B31EC85000520ED /* CustomFlowLayout.swift in Sources */,
 				9CA99FBE1B2FE103000520ED /* ValueCollectionViewCell.swift in Sources */,
 				9CCA2F3A1B38B24800ABCE8F /* ConversationViewController.swift in Sources */,

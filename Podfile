@@ -6,4 +6,5 @@ target 'ValueFaces' do
   pod 'Parse'
   pod 'ParseUI'
   pod 'SVProgressHUD'
+  pod 'GoogleMaps'
 end

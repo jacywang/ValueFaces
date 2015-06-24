@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupParse()
         
         layerClient = LYRClient(appID: LayerAppIDString)
+        
+        GMSServices.provideAPIKey("AIzaSyDV0c0a0ndk0gA4fi1AZhNZhCDqpXgirX4")
         
         // Show View Controller
         let tabBarViewController = window!.rootViewController as! UITabBarController

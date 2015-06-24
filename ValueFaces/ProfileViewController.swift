@@ -13,7 +13,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,16 +31,5 @@ class ProfileViewController: UIViewController {
     
     @IBAction func cameraButtonPressed(sender: UIButton) {
         
-    }
-
-    @IBAction func locationButtonPressed(sender: UIButton) {
-        let gpaViewController = GooglePlacesAutocomplete(
-            apiKey: "[YOUR GOOGLE PLACES API KEY]",
-            placeType: .Address
-        )
-        
-        gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
-        
-        presentViewController(gpaViewController, animated: true, completion: nil)
     }
 }

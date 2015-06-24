@@ -80,7 +80,7 @@ class TopThreeViewController: UIViewController, UITableViewDataSource, UITableVi
             // success ...
             
             if topThreeValues?.count == 0 {
-                tabBarController?.selectedIndex = 1
+                tabBarController?.selectedIndex = 2
             }
             
         } catch let error as NSError {

@@ -757,7 +757,7 @@
                                 </constraints>
                                 <state key="normal" title="Location"/>
                                 <connections>
-                                    <action selector="locationButtonPressed:" destination="IVG-pk-CUN" eventType="touchUpInside" id="f5l-H4-0Rg"/>
+                                    <segue destination="DdB-Tf-l23" kind="show" id="ej8-2t-k4o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -780,6 +780,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypR-l8-yY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021" y="3398"/>
+        </scene>
+        <!--Google Places View Controller-->
+        <scene sceneID="7ii-Sn-WxI">
+            <objects>
+                <viewController id="DdB-Tf-l23" customClass="GooglePlacesViewController" customModule="ValueFaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bpY-Q5-EYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="By5-Mc-gVR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="97p-NG-1kA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-os-RYj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DdB-Tf-l23" id="mjG-Ey-p6U"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5rR-D0-mdz">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1P1-FO-1YP">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1P1-FO-1YP" id="tHG-SR-Gix">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DdB-Tf-l23" id="H82-WA-TsK"/>
+                                    <outlet property="delegate" destination="DdB-Tf-l23" id="tqf-th-YIj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5rR-D0-mdz" firstAttribute="top" secondItem="uRr-os-RYj" secondAttribute="bottom" id="B6C-aR-qtP"/>
+                            <constraint firstAttribute="trailing" secondItem="5rR-D0-mdz" secondAttribute="trailing" id="Hr7-qs-sfB"/>
+                            <constraint firstAttribute="trailing" secondItem="uRr-os-RYj" secondAttribute="trailing" id="IVt-bZ-OK8"/>
+                            <constraint firstItem="uRr-os-RYj" firstAttribute="leading" secondItem="97p-NG-1kA" secondAttribute="leading" id="JhD-hZ-NEp"/>
+                            <constraint firstItem="5rR-D0-mdz" firstAttribute="top" secondItem="uRr-os-RYj" secondAttribute="bottom" id="RXA-XT-KB5"/>
+                            <constraint firstItem="5rR-D0-mdz" firstAttribute="leading" secondItem="97p-NG-1kA" secondAttribute="leading" id="Yax-hW-NFL"/>
+                            <constraint firstItem="By5-Mc-gVR" firstAttribute="top" secondItem="5rR-D0-mdz" secondAttribute="bottom" id="Zgl-iM-IQj"/>
+                            <constraint firstItem="uRr-os-RYj" firstAttribute="top" secondItem="bpY-Q5-EYI" secondAttribute="bottom" id="rQ5-sC-TvU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="uRr-os-RYj" id="y7A-AE-HE3"/>
+                        <outlet property="tableView" destination="5rR-D0-mdz" id="cCz-3n-iOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RzO-7Y-Px4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="3398"/>
         </scene>
         <!--Friend-->
         <scene sceneID="d7g-bU-KhI">
