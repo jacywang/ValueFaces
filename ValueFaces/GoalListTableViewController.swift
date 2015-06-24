@@ -137,10 +137,13 @@ class GoalListTableViewController: UITableViewController {
         valuePopView!.addSubview(textView)
         
         let closeButton = UIButton(type: .System)
-        closeButton.frame = CGRectMake(valuePopView!.frame.width - 20, 0, 30, 30)
+        closeButton.frame = CGRectMake(valuePopView!.frame.width - 40, 10, 30, 30)
         closeButton.tintColor = UIColor.whiteColor()
         closeButton.setTitle("X", forState: .Normal)
         closeButton.addTarget(self, action: "dismissValuePopView:", forControlEvents: .TouchUpInside)
+        closeButton.layer.cornerRadius = closeButton.frame.height / 2.0
+        closeButton.layer.borderColor = UIColor.whiteColor().CGColor
+        closeButton.layer.borderWidth = 1.0
         valuePopView?.addSubview(closeButton)
         
         tableView.addSubview(valuePopView!)

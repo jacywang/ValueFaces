@@ -10,11 +10,16 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
+protocol GooglePlacesViewControllerProtocol {
+    func placeSelected(placeString: NSAttributedString)
+}
+
 class GooglePlacesViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var delegate: GooglePlacesViewControllerProtocol?
     var places = [GMSAutocompletePrediction]()
     var placesClient: GMSPlacesClient?
 
@@ -71,7 +76,9 @@ class GooglePlacesViewController: UIViewController, UISearchBarDelegate, UITable
     // MARK: - Table View Delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //
+        let place = places[indexPath.row]
+        delegate?.placeSelected(place.attributedFullText)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: - Search Bar Delegate
@@ -115,7 +122,6 @@ class GooglePlacesViewController: UIViewController, UISearchBarDelegate, UITable
         let bounds = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
         let filter = GMSAutocompleteFilter()
         filter.type = GMSPlacesAutocompleteTypeFilter.NoFilter
-        
         
         if searchText.length > 0 {
             print("Searching for '\(searchText)'")
