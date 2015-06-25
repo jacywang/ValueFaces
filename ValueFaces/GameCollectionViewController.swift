@@ -86,7 +86,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         flowLayout.scrollDirection = .Vertical
         flowLayout.headerReferenceSize = CGSizeMake(collectionView!.bounds.width, 30.0)
         let cellWidth = (screenwidth! - (screenWidthDivider + 2) * flowLayout.minimumInteritemSpacing) / screenWidthDivider
-        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 2)
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth + spacing * 1.5)
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 5, 10, 5)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)

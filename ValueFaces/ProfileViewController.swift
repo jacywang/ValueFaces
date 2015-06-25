@@ -21,6 +21,13 @@ class ProfileViewController: UIViewController, GooglePlacesViewControllerProtoco
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        if PFUser.currentUser() != nil{
+            usernameTextField.text = PFUser.currentUser()!.username
+        } else {
+            usernameTextField.text = "username"
+        }
+        
+        setCameraButtonShape()
     }
 
     // MARK: - Navigation
@@ -42,4 +49,14 @@ class ProfileViewController: UIViewController, GooglePlacesViewControllerProtoco
         locationButton.setTitle(placeString.string, forState: UIControlState.Normal)
         print(placeString.string)
     }
+    
+    // MARK: - Helper Method
+    func setCameraButtonShape() {
+        cameraButton.layer.cornerRadius = cameraButton.frame.height / 2.0
+        cameraButton.layer.borderWidth = 1.0
+        cameraButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cameraButton.contentMode = UIViewContentMode.ScaleAspectFit
+        cameraButton.clipsToBounds = true
+    }
+    
 }

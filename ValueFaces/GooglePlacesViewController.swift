@@ -36,6 +36,7 @@ class GooglePlacesViewController: UIViewController, UISearchBarDelegate, UITable
         
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: "close")
         closeButton.style = UIBarButtonItemStyle.Done
+        closeButton.tintColor = UIColor.manicCravingColor()
         
         navigationItem.leftBarButtonItem = closeButton
         navigationItem.title = "Enter Address"

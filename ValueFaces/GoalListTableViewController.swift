@@ -26,7 +26,7 @@ class GoalListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBarHidden = false
         navigationController?.hidesBarsOnSwipe = true
-        
+        navigationController?.navigationBar.tintColor = UIColor.manicCravingColor()
         animator = UIDynamicAnimator(referenceView: tableView)
         
         fetchTopThreeValues()
