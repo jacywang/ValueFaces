@@ -131,7 +131,7 @@ class AddReflectionViewController: UIViewController, AKPickerViewDataSource, AKP
         cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
         cancelButton.layer.cornerRadius = cancelButton.frame.size.height / 2.0
         
-        saveButton.layer.borderWidth = 2.0
+        saveButton.layer.borderWidth = 1.0
         saveButton.layer.borderColor = UIColor.whiteColor().CGColor
         saveButton.layer.cornerRadius = saveButton.frame.size.height / 2.0
     }

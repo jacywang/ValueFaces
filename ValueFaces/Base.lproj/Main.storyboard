@@ -24,7 +24,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Italic</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
         </mutableArray>
@@ -574,12 +574,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iif-k0-G7P">
-                                <rect key="frame" x="450" y="340" width="50" height="50"/>
+                                <rect key="frame" x="450" y="315" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="B9g-X9-3eR"/>
                                     <constraint firstAttribute="height" constant="50" id="cBS-tc-JMg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -588,7 +588,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alR-3x-XGO">
-                                <rect key="frame" x="100" y="340" width="50" height="50"/>
+                                <rect key="frame" x="100" y="315" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="c7e-eB-YBV"/>
                                     <constraint firstAttribute="height" constant="50" id="fh2-VT-37T"/>
@@ -601,7 +601,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write here ..." translatesAutoresizingMaskIntoConstraints="NO" id="XIf-tU-KDt">
-                                <rect key="frame" x="0.0" y="70" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
@@ -628,8 +628,8 @@
                             <constraint firstAttribute="trailing" secondItem="lgd-EM-MNm" secondAttribute="trailing" id="Huc-2q-VIO"/>
                             <constraint firstItem="XIf-tU-KDt" firstAttribute="leading" secondItem="wX8-L7-vWc" secondAttribute="leading" id="QZU-5R-dx4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iif-k0-G7P" secondAttribute="trailing" constant="80" id="Ubs-mS-Hss"/>
-                            <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="30" id="UiG-fM-UJS"/>
-                            <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="30" id="a2O-pL-JLF"/>
+                            <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="15" id="UiG-fM-UJS"/>
+                            <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="XIf-tU-KDt" secondAttribute="bottom" constant="15" id="a2O-pL-JLF"/>
                             <constraint firstItem="alR-3x-XGO" firstAttribute="top" secondItem="rNN-vf-8Aw" secondAttribute="bottom" id="jPn-bW-daG"/>
                             <constraint firstItem="XIf-tU-KDt" firstAttribute="height" secondItem="wX8-L7-vWc" secondAttribute="height" multiplier="0.4" id="jyt-SV-TZ0"/>
                             <constraint firstItem="iif-k0-G7P" firstAttribute="top" secondItem="rNN-vf-8Aw" secondAttribute="bottom" id="mfg-ub-HSx"/>
@@ -637,7 +637,7 @@
                             <constraint firstItem="iif-k0-G7P" firstAttribute="leading" secondItem="alR-3x-XGO" secondAttribute="trailing" constant="50" id="pqd-RX-lPZ"/>
                             <constraint firstAttribute="trailing" secondItem="XIf-tU-KDt" secondAttribute="trailing" id="qmo-qy-RN2"/>
                             <constraint firstItem="lgd-EM-MNm" firstAttribute="centerX" secondItem="wX8-L7-vWc" secondAttribute="centerX" id="qvB-Lh-IZX"/>
-                            <constraint firstItem="XIf-tU-KDt" firstAttribute="top" secondItem="lgd-EM-MNm" secondAttribute="bottom" constant="20" id="qyl-sv-d8D"/>
+                            <constraint firstItem="XIf-tU-KDt" firstAttribute="top" secondItem="lgd-EM-MNm" secondAttribute="bottom" constant="10" id="qyl-sv-d8D"/>
                             <constraint firstItem="lgd-EM-MNm" firstAttribute="top" secondItem="rNN-vf-8Aw" secondAttribute="bottom" id="tfY-r5-5xL"/>
                         </constraints>
                         <variation key="default">
